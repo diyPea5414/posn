@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(){
+    int num1[3],x,largest = 0;
+    for (x = 0 ;x < 3 ;x++){
+        scanf("%d",&num1[x]);
+        if(num1[x] > largest){
+            largest = num1[x];
+        }
+    }
+    printf("d",largest);
+}
