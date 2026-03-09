@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main(){
+    int month,day,season=1;
+    scanf("%d",&month);
+    scanf("%d",&day);
+    if (month >= 1 && month <= 3){
+        season = 1;
+        if(day >= 21 && month == 3){
+            season = 2;
+        }  
+    };
+    if (month >= 4 && month <= 6){
+        season = 2;
+        if(day >= 21 && month == 6){
+            season = 3;
+        }  
+    };
+    if (month >= 7 && month <= 9){
+        season = 3;
+        if(day >= 21 && month == 9){
+            season = 4;
+        }  
+    };
+    if (month >= 10 && month <= 12){
+        season = 4;
+        if(day >= 21 && month == 12){
+            season = 1;
+        }  
+    };
+    if (season == 1){
+        printf("winter");
+    }else if(season == 2){
+        printf("spring");
+    }else if(season == 3){
+        printf("summer");
+    }else if(season == 4){
+        printf("fall");
+    }
+}
