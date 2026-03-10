@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main(){
+    int numpass = 4567,numin;
+    char charlock = 'H',charin;
+    scanf("%c",&charin);
+    scanf("%d",&numin);
+    int opennum = (numpass == numin);
+    int openchar = (charlock == charin);
+    if(opennum > 0 && openchar >0){
+        printf("safe unlocked");
+    }
+    else
+    {
+        printf("safe locked");
+        if (openchar ==0 && opennum == 0){
+            return 0;
+        }
+        if(opennum == 0){
+            printf(" - change digit");
+            return 0;
+        }
+        if(openchar == 0){
+            printf(" - change char");
+            return 0;
+        }
+    }
+}
