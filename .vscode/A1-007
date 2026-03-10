@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main(){
+    char charac;
+    scanf("%c",&charac);
+    int charascii = tolower(charac);
+    if ((charascii==97)||(charascii==101)||(charascii==105)||(charascii==111)||(charascii==118)){
+        printf("yes");
+        return 0;
+    }
+    printf("no");
+}
