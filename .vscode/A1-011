@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main(){
+    char theos[6];
+    int i,num = 1;
+    fgets(theos,6,stdin);
+    for (i = 0 ; i<6; i++){
+        //printf("%c %d %d \n",theos[i],i,num);
+        if((i !=5)&&(theos[i]==theos[i+1])){
+            num += 1;
+        }
+        else
+        {
+            if(i != 5){
+                printf("%d%c",num,theos[i],i);
+                num = 1;
+            }
+        }
+    }
+}
