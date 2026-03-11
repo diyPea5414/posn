@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char inputname[30],inputsurname[30],age[10];
+    scanf("%s",inputname);
+    scanf("%s",inputsurname);
+    scanf("%s",age);
+    if(strlen(inputname)>= 5 && strlen(inputsurname)>= 5){
+        printf("%c%c%c%c",inputname[0],inputname[1],inputsurname[strlen(inputsurname)-1],age[strlen(age)-1]);
+    }
+    else
+    {
+        printf("%c%s%c",inputname[0],age,inputsurname[strlen(inputsurname)-1]);
+    }
+}
