@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    int temptouse;
+    char temp[1];
+    scanf("%d",&temptouse);
+    
+    scanf("%s",temp);
+    if (strcmp(temp,"c")==0|| strcmp(temp,"C")==0)
+    {
+        
+        if (temptouse > 0 && temptouse < 100)
+        {
+            printf("liquid");
+        }
+        else if (temptouse <= 0)
+        {
+            printf("solid");
+        }
+        else
+        {
+            printf("gas");
+        }
+    }
+    else if (strcmp(temp,"f")==0|| strcmp(temp,"F")==0)
+    {
+        if (temptouse > 32 && temptouse < 212)
+        {
+            printf("liquid");
+        }
+        else if (temptouse <= 32)
+        {
+            printf("solid");
+        }
+        else
+        {
+            printf("gas");
+        }
+    }
+}
