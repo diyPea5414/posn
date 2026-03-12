@@ -4,8 +4,9 @@
 int main(){
     char input[10];
     int i;
-    scanf("%s",input);
-    for (i = strlen(input)-1; i >= 0 ; i--)
+    //scanf("%s",input);
+    fgets(input,10,stdin);
+    for (i = strlen(input)-2; i >= 0 ; i--)
     {
         printf("%c",input[i]);
     }
