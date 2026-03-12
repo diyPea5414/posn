@@ -4,9 +4,10 @@
 int main(){
     int i;
     char input[10];
+    //fgets(input,10,stdin);
     scanf("%s",input);
     char end = input[strlen(input)-1];
-    input[strlen(input)-2] = 'f';
+    input[strlen(input)-1] = 'f';
     for(i = 0;i < strlen(input); i++){
         if(input[i] == 'A' ||input[i] == 'a'){
             printf("ace");
