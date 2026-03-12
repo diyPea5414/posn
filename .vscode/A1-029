@@ -1,0 +1,18 @@
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(){
+    char input[3];
+    int i,num = 0;
+    if(scanf("%s",input) == 1){
+        for (i = 0; i < strlen(input) ; i++)
+        {
+            if(tolower(input[i]) == 'a' || tolower(input[i]) == 'e'|| tolower(input[i]) == 'i' || tolower(input[i]) == 'o' || tolower(input[i]) == 'u'){
+                num++;
+            }
+        }
+        printf("%d",num);
+    }
+}
