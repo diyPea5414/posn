@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main()
+{
+    char inputnum[6];
+    int i,threecount=0;
+    int sca = scanf("%s",inputnum);
+    if(sca != 1){return 0;}
+    int lenth = strlen(inputnum);
+    threecount = lenth;
+    for(i = lenth -1  ; i >= 0 ; i--){
+        printf("%c",inputnum[lenth-1-i]);
+        threecount--;
+        if(threecount % 3 == 0 && threecount !=0){
+            printf(",");
+        }
+    }
+}
