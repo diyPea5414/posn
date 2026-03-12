@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    int i;
+    char input[10];
+    scanf("%s",input);
+    char end = input[strlen(input)-1];
+    input[strlen(input)-2] = 'f';
+    for(i = 0;i < strlen(input); i++){
+        if(input[i] == 'A' ||input[i] == 'a'){
+            printf("ace");
+        }
+        if(input[i] == 'Q' || input[i] == 'q'){
+            printf("queen");
+        }
+        if(input[i] == 'J' || input[i] == 'j'){
+            printf("joker");
+        }
+        if(input[i] == 'K' ||input[i] == 'k'){
+            printf("king");
+        }
+        if(input[i]- 48>= 0 && input[i]-48<=9){
+            printf("%c",input[i]);
+        }
+    }
+    printf(" of ");
+    if(end == 'c' || end == 'C'){
+        printf("clubs");
+    }
+    else if(end == 'd' || end == 'D'){
+        printf("diamonds");
+    }
+    else if(end == 'h' || end == 'H'){
+        printf("hearts");
+    }
+    else if(end == 's' || end == 'S'){
+        printf("spades");
+    }
+}
