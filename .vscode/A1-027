@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(){
     char input[10];
     int i;
-    //scanf("%s",input);
-    fgets(input,10,stdin);
-    for (i = strlen(input)-2; i >= 0 ; i--)
-    {
-        printf("%c",input[i]);
+    if(scanf("%s",input) == 1){
+        for (i = strlen(input)-1; i >= 0 ; i--)
+        {
+            printf("%c",tolower(input[i]));
+        }
     }
 }
