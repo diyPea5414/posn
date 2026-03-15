@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    char input[1000];
+    scanf("%s",input);
+    int moveby,i;
+    scanf("%d",&moveby);
+    moveby = moveby % 26;
+    for(i = 0; i < strlen(input); i++){
+        int num = input[i] + moveby;
+        if(num > 122){
+            num = num -122 +96;
+        }
+        printf("%c",num);
+    }
+}
