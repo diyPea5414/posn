@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    int temp ,men = 0 ,women = 0;
+    char ch;
+    while(2 == scanf("%d%c", &temp, &ch)){
+        if(ch == '\n' || temp <0)
+            break;
+        else if(ch != ' '){
+            fprintf(stderr, "Invalid input.\n");
+            return -1;
+        }
+        if(temp % 2 == 0){
+            women += 1;
+        }
+        else
+        {
+            men += 1;
+        }
+    }
+    printf("%d %d %d",men,women,men+women);
+    return 0;
+}
