@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    int pencil,book,colorpencils;
+    scanf("%d %d %d",&pencil,&book,&colorpencils);
+    int totalprice = (pencil*25)+(book*40)+(colorpencils*55);
+    if(pencil+book+colorpencils >= 3){
+        totalprice = totalprice *0.9;
+    }
+    printf("%d",totalprice);
+}
