@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    char position;
+    int agework,moneymade,percent,bonus;
+    scanf("%c %d %d",&position,&agework,&moneymade);
+    if(position == 'M'){
+        bonus = 1500;
+        if(agework < 5){
+            percent = 6;
+        }
+        else if(agework >= 5 && agework <= 10){
+            percent = 8;
+        }
+        else if(agework > 10){
+            percent = 10;
+        }
+    }
+    else if(position == 'B'){
+        bonus = 1000;
+        if(agework < 5){
+            percent = 5;
+        }
+        else if(agework >= 5 && agework <= 10){
+            percent = 6;
+        }
+        else if(agework > 10){
+            percent = 7;
+        }
+    }
+    else if(position == 'G'){
+        bonus = 500;
+        if(agework < 5){
+            percent = 4;
+        }
+        else if(agework >= 5 && agework <= 10){
+            percent = 5;
+        }
+        else if(agework > 10){
+            percent = 6;
+        }
+    }
+    printf("%d",bonus+(moneymade*percent/100));
+}
