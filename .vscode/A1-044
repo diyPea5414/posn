@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    int inputage,price=0;
+    char inputday;
+    scanf("%d %c",&inputage,&inputday);
+    if(inputage < 5){
+        price=0;
+    }
+    else if(inputage >= 5 && inputage <= 18){
+        price=100;
+    }
+    else
+    {
+        price=150;
+    }
+    if(inputday == 'W'){
+        price = price/2;
+    }
+    printf("%d",price);
+}
