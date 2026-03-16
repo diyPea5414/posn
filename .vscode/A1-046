@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    int temp ,i=0,odd=0,even=0,sum=0,times;
+    char ch;;
+    scanf("%d",&times);
+    while(2 == scanf("%d%c", &temp, &ch) && i < times){
+        if(temp%2 == 0){
+            even +=1;
+        }
+        else
+        {
+            odd +=1;
+        }
+        sum += temp;
+        i +=1;
+        if(ch == '\n')
+            break;
+        else if(ch != ' '){
+            fprintf(stderr, "Invalid input.\n");
+            return -1;
+        }
+    }
+    printf("SUM %d\nEVEN %d\nODD %d",sum,even,odd);
+}
