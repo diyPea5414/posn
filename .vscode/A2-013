@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    char inputboba,tea;
+    int numberofboboa,sweetness=0,sweetnessa=0,energytotal,energybob,key=0,i,j;
+    int energytea[3][3]={
+        [0]= {12,18,25},
+        [1]={15,20,30},
+        [2]={10,15,20}
+    };
+    scanf("%c %d\n",&inputboba,&numberofboboa);
+    scanf("%c %d ",&tea,&sweetness);
+    scanf("%d",&sweetnessa);
+    if(inputboba == 'H'){
+        energybob = 5;
+    }
+    else if(inputboba == 'O')
+    {
+        energybob = 3;
+    }
+    else if(inputboba == 'J'){
+        energybob = 2;
+    }
+    if(tea == 'R'){
+        key = 0;
+    }
+    else if(tea == 'T')
+    {
+        key = 1;
+    }
+    else if(tea == 'M'){
+        key = 2;
+    }
+
+    energytotal = (energybob*numberofboboa)+(energytea[key][sweetness-1]*sweetnessa);
+    printf("%d",energytotal);
+}
