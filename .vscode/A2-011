@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    int i=0,inputnum[10],temp,times,valid;
+    char ch;
+    for(i = 0; i < 10 ; i++){
+        scanf("%d",&temp);
+        valid = 0;
+        for(times = 0;times < i;times++){
+            if(inputnum[times] == temp){
+                valid = 0;
+            }
+            else
+            {
+                valid += 1;
+            }
+        }
+        if(valid == i){
+            printf("%d ",temp);
+            inputnum[i] = temp;
+        }
+    }
+}
