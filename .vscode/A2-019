@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    char input[8],saveinput[8];
+    int i,temp,utotal=0,utotaltemp=0,numB=0;
+    scanf("%s",input);
+      strcpy(saveinput, input);
+
+    for(i = 0 ;i < strlen(input);i++){
+        input[i] = tolower(input[i]);
+    }
+    for(i = 0 ;i < strlen(input);i++){
+        if(input[i] == 'b'){
+            numB++;
+            temp = i+1;
+            while (input[temp]== 'u' && temp < strlen(input))
+            {
+                utotaltemp +=1;
+                temp +=1;
+            }
+            if(utotal<utotaltemp){
+                utotal = utotaltemp;
+            }
+            utotaltemp = 0;
+        }
+    }
+    if(utotal > 0){
+        printf("Yes %d",utotal);
+    }
+    else
+    {
+        for(i = 0 ;i < strlen(input);i++){
+            if(numB == 0) break;
+            if(input[i] == 'b'){
+                printf("%c",saveinput[i]);
+                for(temp = 0;i <strlen(input)-1;i++){
+                    printf("U");
+                }
+                return 0;
+            }
+            else
+            {
+                printf("%c",saveinput[i]);
+            }
+        }
+        for(i = 0 ;i < strlen(input);i++){
+            if(i % 3== 0){
+                printf("B");
+            }
+            else
+            {
+                printf("U");
+            }
+        }
+    }
+}
