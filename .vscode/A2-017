@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    char input1,input2,extras;
+    int numberofstuff,key1=0,key2=0,key3=0;
+    int pricenormal[3][2]=
+    {
+        {60,80},{80,100},{100,120}
+    };
+    int priceextras[2]={
+        15,10
+    };
+    scanf("%c %c\n",&input1,&input2);
+    scanf("%c",&extras);
+    if(extras != 'N'){
+        scanf("%d",&numberofstuff);
+    }
+    if(input1 == 'S'){
+        key1 = 0;
+    }
+    else if(input1 == 'M'){
+        key1 = 1;
+    }
+    else if(input1 == 'L'){
+        key1 = 2;
+    }
+
+    if(input2 == 'R'){
+        key2 = 0;
+    }
+    else if(input2 == 'T'){
+        key2 = 1;
+    }
+
+    if(extras == 'P'){
+        key3 = 0;
+    }
+    else if(extras == 'E'){
+        key3 = 1;
+    }
+    printf("%d",pricenormal[key1][key2] + (priceextras[key3] * numberofstuff));
+}
