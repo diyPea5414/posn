@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    int inputimes,i,j;
+    scanf("%d",&inputimes);
+    
+    int outputnum[inputimes];
+    char out[6][100] = {
+        "Hello! How can I help you?",
+        "Goodbye! Have a nice day!",
+        "That's an interesting question!",
+        "I see some numbers there!",
+        "That's quite a long message!",
+        "Hello! How can I help you?",
+    };
+    char input[100];
+    for(i = 0;i < inputimes;i++){
+        fgets(input,100,stdin);
+        printf("%d",i);
+        char output[100];
+        for(j = 0; j < strlen(input); j++){
+            output[i] = tolower(input[i]);
+        }   
+        if(strstr(output,"hello") != NULL || strstr(output,"hi") != NULL){
+            printf("%s",out[0]);
+        }
+        
+    }
+}
