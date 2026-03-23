@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+
+int main(){
+    int input,i;
+    scanf("%d",&input);
+    char patients[input][50];
+     for(i = 0; i < input ; i++){
+
+     }
+}
