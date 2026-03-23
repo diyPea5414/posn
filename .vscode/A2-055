@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdbool.h>
+void swap(float* xp, float* yp){
+    float temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
+
+// An optimized version of Bubble Sort
+void bubbleSort(float arr[], int n){
+    int i, j;
+    bool swapped;
+    for (i = 0; i < n - 1; i++) {
+        swapped = false;
+        for (j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(&arr[j], &arr[j + 1]);
+                swapped = true;
+            }
+        }
+
+        // If no two elements were swapped by inner loop,
+        // then break
+        if (swapped == false)
+            break;
+    }
+}
+void printArray(float arr[], int size){
+    int i;
+    for (i = 0; i < size; i++)
+        printf("%.2f ", arr[i]);
+}
+
+int main(){
+    int num,i,alert = 0;
+    scanf("%d",&num);
+    float alltemp[num],total= 0,max= 0,min = 999;
+    for(i = 0; i < num ;i++){
+        scanf("%f",&alltemp[i]);
+        total+=alltemp[i];
+        if(alltemp[i] > max){
+            max =alltemp[i];
+        }
+        if(alltemp[i] < min){
+            min =alltemp[i];
+        }
+        if(alltemp[i] >= 37.00){
+            alert +=1;
+        }
+    }
+    printf("SUM=%.2f\n",total);
+    float numf = num; 
+    printf("AVG=%.2f\n",total/numf);
+    bubbleSort(alltemp,num);
+    if(num % 2 ==1){
+        printf("MEDIAN=%.2f\n",alltemp[num/2]);
+    }
+    else
+    {
+        printf("MEDIAN=%.2f\n",(alltemp[(num/2-1)]+alltemp[(num/2)])/2);
+    }
+    printf("MAX=%.2f\n",max);
+    printf("MIN=%.2f\n",min);
+    printf("ALERT=%d\n",alert);
+    printf("SORTED=");
+    printArray(alltemp,num);
+}
