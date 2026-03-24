@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(){
+    int input,i,highest=0,lowest=9999,total = 0;
+    scanf("%d",&input);
+    int numinputs[input];
+    for(i = 0;i <input;i++){
+        scanf("%d",&numinputs[i]);
+    }
+    printf("Student: ");
+    for(i = 0;i <input;i++){
+        printf("Student%d ",i+1);
+        if(numinputs[i] > highest){
+            highest = numinputs[i];
+        }
+        if(numinputs[i] < lowest){
+            lowest = numinputs[i];
+        }
+        total +=numinputs[i];
+    }
+    if(input == 0){
+        return 0;
+    }
+    printf("\n");
+    printf("Highest score: %d\n",highest);
+    printf("Lowest score: %d\n",lowest);
+    float totalf = total;
+    printf("Average score: %.1f\n",totalf/input);
+    printf("Students who scored above average:\n");
+    for(i = 0;i <input;i++){
+        float tmp = numinputs[i];
+        if(tmp > totalf/input){
+            printf("Student %d\n",i+1);
+        }
+    }
+}
