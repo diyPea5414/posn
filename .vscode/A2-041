@@ -1,0 +1,42 @@
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(){
+    int input,inputsave,i,temp=1,times,key,j;
+    int numtpdivide[3] = {2,8,16};
+    int toprint[50];
+    scanf("%d",&input);
+    for(times = 0 ; times < 3 ; times++){
+        inputsave = input;
+        key = 0;
+        while(inputsave != 0){
+            int remainder = inputsave % numtpdivide[times];
+            toprint[key] = remainder;
+            inputsave = (inputsave- remainder)/numtpdivide[times];
+            key++;
+        }
+        for(j = key-1 ;j >= 0 ;j--){
+            if(input == 0){
+                printf("0");
+            }
+            if(toprint[j] >= 10){
+                printf("%c",toprint[j]+55);
+            }
+            else if(toprint[j] < 10)
+            {
+                printf("%d",toprint[j]);
+            }
+            else
+            {
+                printf("0");
+            }
+            toprint[j] = 0;
+        }
+        printf("\n");
+    }
+
+}
