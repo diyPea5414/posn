@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(){
+    int input,i,j,temp;
+    scanf("%d",&input);
+    int input1[input * input],answer[input * input];
+    for(i = 0;i < 2;i++){
+        for(j = 0;j<input*input ;j++){
+            scanf("%d",&temp);
+            if(i == 0){
+                input1[j] = temp;
+            }
+            else
+            {
+                answer[j] = input1[j] + temp;
+            }
+        }
+    }
+    for(i = 0;i<input;i++){
+        for(j = 0;j<input;j++){
+            printf("%d ",answer[j+ (i * input)]);
+        }
+        printf("\n");
+    }
+}
