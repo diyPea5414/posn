@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(){
+    int numteams,numpeeps,i,j;
+    scanf("%d",&numteams);
+    int chars = getchar();
+    scanf("%d",&numpeeps);
+    int charss = getchar();
+    int input[numteams][numpeeps];
+    int totalsores=0,max[numteams];
+    float avg[numteams];
+    for(i = 0;i < numteams; i++){
+        int highest = 0;
+        float total= 0.0;
+        for(j = 0;j< numpeeps;j++){
+            int temp;
+            scanf("%d",&input[i][j]);
+            float tempf = input[i][j];
+            total += tempf;
+            totalsores += input[i][j];
+            if(input[i][j] > highest){
+                highest = input[i][j];
+            }
+        }
+        max[i] = highest;
+        avg[i] = total / numpeeps;
+    }
+    for(i = 0;i < numteams; i++){
+        printf("Team %d: Average = %.2f, Max = %d\n",i+1,avg[i],max[i]);
+    }
+    printf("Total Score of All Teams = %d",totalsores);
+    return 0;
+}
