@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(){
+    int inputnumber,i;
+    scanf("%d",&inputnumber);
+    for(i = 0 ;i*i < inputnumber; i++){
+        printf("%d",i*i);
+    }
+}
