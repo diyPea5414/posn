@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(){
+    int input_steps,input_takeout,i,total = 0,times = 0;
+    scanf("%d %d",&input_steps,&input_takeout);
+    for(i = 1;i <= input_steps;i++){
+        total += i*i;
+    }
+    total -= input_takeout;
+    for(i = input_steps;total > 0;i--){
+        total -= i*i;
+        times++;
+    }
+    printf("%d",times);
+}
