@@ -39,10 +39,10 @@ int main(){
     }
     printf("\n");
     if(higest[0] > higest[1] + higest[2]){
-        printf("YES");
+        printf("YES\n");
     }
     else
     {
-        printf("NO");
+        printf("NO\n");
     }
 }
