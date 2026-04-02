@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <math.h>
+#include <stdbool.h>
+
+int main(){
+    int inputsizeboxW,inputsizeboxL,inputsizeboxM,inputsizeboxN;
+    scanf("%d %d %d %d",&inputsizeboxW,&inputsizeboxL,&inputsizeboxM,&inputsizeboxN);
+    int lenth = inputsizeboxN - inputsizeboxM +1,i;
+    int arealeft,smallest;
+    for(i = 0;i < lenth;i++){
+        int widthleft = inputsizeboxW % (inputsizeboxM+i);
+        int lenthleft = inputsizeboxL % (inputsizeboxM+i);
+        arealeft = widthleft*lenthleft;
+        if(i == 0){
+            smallest = arealeft;
+        }
+        else
+        {
+            if(smallest > arealeft){
+                smallest = arealeft;
+            }
+        }
+    }
+    printf("%d",smallest);
+}
